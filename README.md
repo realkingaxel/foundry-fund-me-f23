@@ -1,66 +1,36 @@
-## Foundry
+# Fund Me Smart Contract (Cyfrin Course)
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This repository contains the **Fund Me** smart contract built while following the [Cyfrin Updraft](https://updraft.cyfrin.io/) Solidity/Foundry course.
 
-Foundry consists of:
+## 📜 Overview
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The **Fund Me** contract is a simple crowdfunding dApp:
 
-## Documentation
+* Anyone can **fund** the contract with ETH.
+* Each contribution is checked against a **minimum USD value** using a **Chainlink price feed** to convert ETH to USD in real time.
+* The contract **owner** can withdraw the accumulated funds.
 
-https://book.getfoundry.sh/
+## 🧩 Key Features
 
-## Usage
+* **Price Oracle Integration**: Uses Chainlink AggregatorV3Interface to fetch ETH/USD prices.
+* **Access Control**: `onlyOwner` modifier restricts withdrawals to the deployer.
+* **Gas Optimizations**: Leverages `constant`, `immutable`, and custom errors for efficiency.
+* **State Management**: Tracks funders and amounts, and resets records after withdrawals.
 
-### Build
+## 🛠 Tech Stack
 
-```shell
-$ forge build
-```
+* **Solidity** ^0.8.x
+* **Foundry** (Forge & Cast) for testing, deployment scripts, and local blockchain forking.
 
-### Test
+## 🧪 Tests
 
-```shell
-$ forge test
-```
+Foundry tests cover:
 
-### Format
+* Minimum funding requirements
+* Correct accounting of contributions
+* Owner-only withdrawals
+* Accurate ETH/USD conversions using mocked price feeds
 
-```shell
-$ forge fmt
-```
+---
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This project demonstrates best practices for building and testing a production-ready crowdfunding contract while integrating external oracles and emphasizing security and gas efficiency.
