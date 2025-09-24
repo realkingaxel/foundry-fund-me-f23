@@ -33,4 +33,4 @@ Foundry tests cover:
 
 This project demonstrates best practices for building and testing a production-ready crowdfunding contract while integrating external oracles and emphasizing security and gas efficiency.
 
-This repository contains the **Fund Me** smart contract built while following the [Cyfrin Updraft](https://updraft.cyfrin.io/) foundry course.
+This repository was built while following the [Cyfrin Updraft](https://updraft.cyfrin.io/) foundry course.
