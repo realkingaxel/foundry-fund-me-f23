@@ -1,6 +1,4 @@
-# Fund Me Smart Contract (Cyfrin Course)
-
-This repository contains the **Fund Me** smart contract built while following the [Cyfrin Updraft](https://updraft.cyfrin.io/) Solidity/Foundry course.
+# Fundraising smart contract
 
 ## 📜 Overview
 
